@@ -4,6 +4,8 @@
 # See the end of the file for more details and warnings about common mistakes.
 
 [app]
+p4a.hook = 
+p4a.bootstrap = sdl2
 android.permissions = INTERNET,ACCESS_NETWORK_STATE,RECORD_AUDIO,MODIFY_AUDIO_SETTINGS
 android.accept_sdk_license = True
 android.api = 33
@@ -49,7 +51,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.11.9,kivy,pyjnius
+requirements = python3,kivy,pyjnius
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -338,9 +340,7 @@ android.allow_backup = True
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = master
 
-# (str) python-for-android specific commit to use, defaults to HEAD, must be within p4a.branch
 #p4a.commit = HEAD
 
 # (str) python-for-android git clone directory
