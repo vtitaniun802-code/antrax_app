@@ -11,8 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        
 
     - name: Set up Python
       uses: actions/setup-python@v5
