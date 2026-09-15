@@ -4,6 +4,7 @@
 # See the end of the file for more details and warnings about common mistakes.
 
 [app]
+android.accept_sdk_license = True
 android.api = 33
 android.minapi = 24
 
@@ -22,7 +23,6 @@ source.dir = .
 # (list) Source files to include (leave empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
 android.permissions = INTERNET, ACCESS_NETWORK_STATE
-android.accept_sdk_license = True
 android.uses_cleartext_traffic = True
 android.sdk_build_tools = 33.0.0
 android.ndk = 25b
@@ -146,7 +146,6 @@ fullscreen = 0
 # agreements. This is intended for automation only. If set to False,
 # the default, you will be shown the license when first running
 # buildozer.
-android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.kivy.android.PythonActivity
