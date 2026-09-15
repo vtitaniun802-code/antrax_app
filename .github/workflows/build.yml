@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: recursive
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -20,13 +22,15 @@ jobs:
     - name: Install System Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libltdl-dev ffmpeg libsdl2-dev openjdk-17-jdk git zip unzip build-essential
+        sudo apt-get install -y libltdl-dev ffmpeg libsdl2-dev openjdk-17-jdk git zip unzip build-essential autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libffi-dev libssl-dev
 
-    - name: Configure Git and Swap
+    - name: Configure Git and Buffer
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
-        git config --global http.postBuffer 524288000
+        git config --global url."https://github.com/".insteadOf git@github.com:
+        git config --global http.postBuffer 1048576000
+        git config --global safe.directory '*'
 
     - name: Install Buildozer and Cython
       run: |
