@@ -25,7 +25,12 @@ jobs:
     - name: Install System Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libltdl-dev ffmpeg libsdl2-dev openjdk-17-jdk
+        sudo apt-get install -y libltdl-dev ffmpeg libsdl2-dev openjdk-17-jdk git
+
+    - name: Configure Git for Runner
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
 
     - name: Pre-accept Android SDK Licenses
       run: |
