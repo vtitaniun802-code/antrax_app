@@ -22,7 +22,7 @@ source.dir = .
 
 # (list) Source files to include (leave empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
-android.permissions = INTERNET, ACCESS_NETWORK_STATE
+android.permissions = INTERNET,ACCESS_NETWORK_STATE,RECORD_AUDIO,MODIFY_AUDIO_SETTINGS
 android.uses_cleartext_traffic = True
 android.sdk_build_tools = 33.0.0
 android.ndk = 25b
@@ -49,7 +49,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.11.0,hostpython3==3.11.0,kivy,requests,urllib3,certifi,idna,charset-normalizer
+requirements = python3,kivy,pyjnius
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -110,7 +110,7 @@ fullscreen = 0
 
 # (list) Permissions
 # (See https://python-for-android.readthedocs.io/en/latest/buildoptions.html for all the supported syntaxes and properties)
-#android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
+android.permissions = INTERNET,ACCESS_NETWORK_STATE,RECORD_AUDIO,MODIFY_AUDIO_SETTINGS
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
