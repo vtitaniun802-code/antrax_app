@@ -25,6 +25,9 @@ android.uses_cleartext_traffic = True
 android.api = 33
 android.minapi = 24
 android.sdk_build_tools = 33.0.0
+android.api = 33
+android.minapi = 24
+android.ndk = 25b
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -48,7 +51,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,requests,urllib3,certifi,idna,charset-normalizer
+requirements = python3==3.11.0,kivy,requests,urllib3,certifi,idna,charset-normalizer
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
