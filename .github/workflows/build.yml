@@ -27,13 +27,15 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y libltdl-dev ffmpeg libsdl2-dev openjdk-17-jdk
 
-    - name: Accept Android SDK Licenses & Build
+    - name: Pre-accept Android SDK Licenses
       run: |
-        mkdir -p ~/.android
-        touch ~/.android/repositories.cfg
-        yes | buildozer -v android debug
-      env:
-        ACCEPT_BUILD_TOOLS_CHECKSUM: "true"
+        mkdir -p ~/.buildozer/android/platform/android-sdk/licenses
+        echo -e "\n89330d22263015a00268a31bc008649a93368390\nd56f5187479451eabf01fb78af6dfcb131a6481e\n24333f8a6371b6a4d16173f9a931657f7b301192" > ~/.buildozer/android/platform/android-sdk/licenses/android-sdk-license
+        echo -e "\n84831b9402116da57d5a44efc11a43ed2942c492" > ~/.buildozer/android/platform/android-sdk/licenses/android-sdk-preview-license
+
+    - name: Build with Buildozer
+      run: |
+        buildozer -v android debug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
