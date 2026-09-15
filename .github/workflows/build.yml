@@ -20,13 +20,20 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install buildozer cython
+        pip install "cython<3.0" buildozer
 
-    - name: Build with Buildozer
+    - name: Install System Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libltdl-dev ffmpeg libsdl2-dev
-        buildozer -v android debug
+        sudo apt-get install -y libltdl-dev ffmpeg libsdl2-dev openjdk-17-jdk
+
+    - name: Accept Android SDK Licenses & Build
+      run: |
+        mkdir -p ~/.android
+        touch ~/.android/repositories.cfg
+        yes | buildozer -v android debug
+      env:
+        ACCEPT_BUILD_TOOLS_CHECKSUM: "true"
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
