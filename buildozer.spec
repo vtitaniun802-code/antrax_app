@@ -4,8 +4,6 @@
 # See the end of the file for more details and warnings about common mistakes.
 
 [app]
-p4a.hook = 
-p4a.bootstrap = sdl2
 android.permissions = INTERNET,ACCESS_NETWORK_STATE,RECORD_AUDIO,MODIFY_AUDIO_SETTINGS
 android.accept_sdk_license = True
 android.api = 33
@@ -51,7 +49,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,pyjnius
+requirements = python3==3.11.0,kivy,pyjnius,charset-normalizer==3.3.2
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -350,11 +348,9 @@ android.allow_backup = True
 #p4a.local_recipes =
 
 # (str) Filename to the hook for p4a
-#p4a.hook =
 
 # (str) Bootstrap to use for android builds
 # Run "buildozer android p4a -- bootstraps" for a list of valid values.
-# p4a.bootstrap = sdl2
 
 # (int) port number to specify an explicit --port= p4a argument (eg for bootstrap flask)
 #p4a.port =
