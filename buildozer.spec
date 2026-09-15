@@ -4,6 +4,8 @@
 # See the end of the file for more details and warnings about common mistakes.
 
 [app]
+android.api = 33
+android.minapi = 24
 
 # (str) Title of your application
 title = AntraxIA
@@ -22,11 +24,7 @@ source.include_exts = py,png,jpg,kv,atlas
 android.permissions = INTERNET, ACCESS_NETWORK_STATE
 android.accept_sdk_license = True
 android.uses_cleartext_traffic = True
-android.api = 33
-android.minapi = 24
 android.sdk_build_tools = 33.0.0
-android.api = 33
-android.minapi = 24
 android.ndk = 25b
 
 # (list) List of inclusions using pattern matching
@@ -118,10 +116,8 @@ fullscreen = 0
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 33
 
 # (int) Minimum API your APK / AAB will support.
-#android.minapi = 24
 
 # (int) Android SDK version to use
 #android.sdk = 20
