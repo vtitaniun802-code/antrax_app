@@ -19,7 +19,8 @@ source.dir = .
 
 # (list) Source files to include (leave empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
-android.permissions = INTERNET
+android.permissions = INTERNET, ACCESS_NETWORK_STATE
+android.accept_sdk_license = True
 android.uses_cleartext_traffic = True
 android.api = 33
 android.minapi = 24
@@ -47,7 +48,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy
+requirements = python3,kivy,requests,urllib3,certifi,idna,charset-normalizer
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
