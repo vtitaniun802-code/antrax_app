@@ -4,6 +4,7 @@
 # See the end of the file for more details and warnings about common mistakes.
 
 [app]
+android.permissions = INTERNET,ACCESS_NETWORK_STATE,RECORD_AUDIO,MODIFY_AUDIO_SETTINGS
 android.accept_sdk_license = True
 android.api = 33
 android.minapi = 24
@@ -22,7 +23,6 @@ source.dir = .
 
 # (list) Source files to include (leave empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
-android.permissions = INTERNET,ACCESS_NETWORK_STATE,RECORD_AUDIO,MODIFY_AUDIO_SETTINGS
 android.uses_cleartext_traffic = True
 android.sdk_build_tools = 33.0.0
 android.ndk = 25b
@@ -110,7 +110,6 @@ fullscreen = 0
 
 # (list) Permissions
 # (See https://python-for-android.readthedocs.io/en/latest/buildoptions.html for all the supported syntaxes and properties)
-android.permissions = INTERNET,ACCESS_NETWORK_STATE,RECORD_AUDIO,MODIFY_AUDIO_SETTINGS
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
