@@ -2,6 +2,7 @@ import os
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.utils import platform
+from kivy.uix.widget import Widget
 
 URL = "https://antrax-app-fixo.serveousercontent.com/"
 
@@ -11,7 +12,8 @@ class AntraxApp(App):
   def build(self):
     if platform == "android":
       Clock.schedule_once(self.init_webview, 0.5)
-    return
+    # Retorna um Widget vazio para inicializar a Window do Kivy no Android
+    return Widget()
 
   def init_webview(self, dt):
     from android.runnable import run_on_ui_thread
